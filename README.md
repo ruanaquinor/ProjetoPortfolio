@@ -23,5 +23,5 @@ O objetivo do projeto foi construir uma aplicação web responsiva e funcional.
 
 O deploy da aplicação foi realizado através do GitHub Pages. Você pode acessar o portfólio funcional no link abaixo:
 
-👉 **[https://ruanaquinor.github.io/ProjetoPortifolio/]**
+👉 **[https://ruanaquinor.github.io/ProjetoPortfolio/]**
 

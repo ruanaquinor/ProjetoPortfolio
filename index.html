@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Ruan</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO COM MENU -->
+    <header class="topo">
+        <nav class="menu">
+            <!-- Botão que só vai aparecer no celular -->
+            <button id="btnMenu" class="btn-mobile">☰ Menu</button>
+            
+            <!-- Adicionamos o id="menuLinks" para o JS encontrar a lista -->
+            <ul id="menuLinks">
+                <li><a href="#sobre">Sobre mim</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+
+                <!-- Botão de alternar o tema -->
+                <li><button id="btnTema" class="btn-tema">Mudar para tema:🌙 Escuro</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="principal">
+
+        <!-- SOBRE MIM -->
+        <!--Seção sobre o meu nome e informações sobre mim -->
+        <section id="sobre">
+            <h1>Sobre mim:</h1>
+            <p>Olá, meu nome é Ruan de Aquino Rosa.</p>
+            <p>Sou estudante de Análise e Desenvolvimento de Sistemas na UNINTER. Tenho um perfil técnico e analítico, focado em
+                resolver problemas lógicos linha por linha. No meu tempo livre treino musculação e calistenia, estudo
+                idiomas (Inglês, Espanhol e Japonês), estudo música(Violão) e gosto de explorar jogos táticos e RPGs de
+                ação no
+                meu PC.</p>
+        </section>
+
+        <hr>
+
+        <!-- FORMAÇÃO -->
+        <!-- Seção sobre a minha formação e conhecimentos -->
+        <section id="formacao">
+            <h2>Formação e Conhecimentos:</h2>
+            <ul>
+                <li><strong>Graduação:</strong> Análise e Desenvolvimento de Sistemas - UNINTER.</li>
+                <li><strong>Idiomas:</strong> Inglês (Certificação EF SET - C2 Proficient), Espanhol(iniciante) e
+                    Japonês(iniciante)</li>
+                <li><strong>Disciplinas Concluídas:</strong> Sistemas de Gerenciamento de Banco de Dados (SGBD),
+                    Estruturas de Dados, Programação Orientada a Objetos, Governança de TI, Rede de Computadores.</li>
+                <li><strong>Cursos:</strong> Desing Gráfico(udemy), Excel(udemy), Desenvolvimento Web(udemy).</li>
+                <li><strong>Linguagens:</strong> Java, Python, HTML, CSS, JavaScript, Kotlin(iniciante).</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- PORTFÓLIO -->
+        <!-- Seção sobre trabalhos que fiz durante o curso -->
+        <section id="portfolio">
+            <h2>Meu Portfólio:</h2>
+            <div class="lista-projetos">
+                <article class="projeto">
+                    <h3>Tabela de 26 estados na Tabela Hash</h3>
+                    <p>Tabelas hash de 10 posições para gerenciamento de siglas de
+                        estados utilizando a linguagem Python</p>
+                    <a href="https://github.com/ruanaquinor/estados-brasil-tabela-hash" target="_blank">Ver no github</a>
+                </article>
+
+                <article class="projeto">
+                    <h3>Sistema de Triagem na Lista encadeada</h3>
+                    <p>Implementação de listas encadeadas para a criação de um Sistema de Triagem utilizando a linguagem Python.</p>
+                    <a href="https://github.com/ruanaquinor/sistema-triagem-python" target="_blank">Ver no github</a>
+
+                </article>
+
+                <article class="projeto">
+                    <h3>Controle de vendas utilizando SQL</h3>
+                    <p>Sistema de vendas de hardware criado para um banco de dados utilizando a linguagem SQL.</p>
+                    <a href="https://github.com/ruanaquinor/controle-vendas-sql" target="_blank">Ver no github</a>
+                </article>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- CONTATO -->
+        <!-- Seção Contato para inserir o nome, email e uma mensagem. -->
+        <section id="contato">
+            <h2>Contato:</h2>
+            <form id="formContato">
+                <table>
+                    <tr>
+                        <th><label for="nome">Nome:</label></th>
+                        <!-- Limite de 50 caracteres -->
+                        <td><input type="text" name="nome" id="nome" placeholder="Digite seu nome" maxlength="50"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="email">E-mail:</label></th>
+                        <!-- Limite de 50 caracteres -->
+                        <td><input type="email" name="email" id="email" placeholder="seu@email.com" maxlength="50"></td>
+                    </tr>
+                    <tr>
+                        <th><label for="msg">Mensagem:</label></th>
+                        <!-- Limite de 1000 caracteres -->
+                        <td><textarea name="msg" id="msg" rows="5" cols="40" placeholder="Digite sua mensagem aqui..."
+                                maxlength="1000"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="button" id="btnEnviar" class="botao">Enviar Mensagem</button></td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+
+    <footer class="rodape">
+        <p>2026 Ruan - Atividade Prática - Fundamentos da Programação Web</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

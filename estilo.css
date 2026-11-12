@@ -1,0 +1,294 @@
+/* --------------------------------------
+   VARIÁVEIS GLOBAIS
+   --------------------------------------*/
+/* Define as variáveis de cores para padronizar o layout */
+:root {
+    --cor-fundo: whitesmoke;
+    --cor-topo: rgb(21, 102, 102);
+    --cor-texto: black;
+    --cor-hover: dodgerblue;
+    --cor-borda: lightgray;
+}
+
+/* Zera as margens padrão do navegador e ajusta o box-sizing para que padding e borda não alterem a largura total dos elementos*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Ativa a rolagem suave quando o usuário clica em um link âncora do menu*/
+html {
+    scroll-behavior: smooth;
+}
+
+/* --------------------------------------
+   LAYOUT PRINCIPAL
+   --------------------------------------*/
+/* Divide o corpo da página em 3 linhas horizontais e define áreas nomeadas*/
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6; 
+    display: grid;
+    grid-template-rows: 60px auto 60px; 
+    grid-template-areas: 
+        "topo"
+        "principal"
+        "rodape";
+}
+
+/* --------------------------------------
+   CABEÇALHO DE NAVEGAÇÃO
+   --------------------------------------*/
+.topo {
+    grid-area: topo;
+    background-color: var(--cor-topo);
+    position: fixed; 
+    width: 100%;
+    top: 0;
+    z-index: 100; 
+}
+
+/* Uso de Flexbox para remover os marcadores da lista e alinhar os itens do menu ao centro*/
+.menu ul {
+    list-style-type: none; 
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Transforma os links em blocos clicáveis, remove o sublinhado e aplica transição suave na mudança de cor*/
+.menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 19px 20px;
+    text-decoration: none; 
+    font-weight: bold;
+    transition: background-color 0.3s ease; 
+}
+
+/* Remove o sublinhado e aplica transição suave na mudança de cor*/
+.menu li a:hover {
+    background-color: var(--cor-hover);
+    color: white;
+}
+
+/* --------------------------------------
+   ÁREA PRINCIPAL E SEÇÕES
+   --------------------------------------*/
+/* Contêiner centralizado que segura todo o conteúdo do portfólio*/
+.principal {
+    grid-area: principal;
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding: 20px 20px; 
+}
+
+section {
+    padding: 120px 0 80px; 
+    text-align: justify; 
+}
+
+h1, h2 {
+    color: var(--cor-topo);
+    margin-bottom: 20px;
+}
+
+p, ul {
+    margin-bottom: 15px;
+}
+
+/* Faz com que as listas dentro das seções de texto mantenham as bolinhas utilizando o (disc)*/
+section ul {
+    list-style-type: disc; 
+    margin-left: 20px;
+}
+
+/* Estilo da linha divisória entre as seções*/
+hr {
+    border: 0;
+    border-top: 2px solid var(--cor-borda);
+    margin: 40px 0; 
+}
+
+/* --------------------------------------
+   PORTFÓLIO
+   --------------------------------------*/
+/* Cria 3 colunas de tamanhos iguais para o Desktop*/
+.lista-projetos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);    
+    gap: 20px; 
+}
+
+/*Flexbox em coluna para permitir o alinhamento dinâmico dos elementos internos*/
+.projeto {
+    background-color: white;
+    border: 1px solid var(--cor-borda);
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto a {
+    color: var(--cor-hover); 
+    text-decoration: none;   
+    font-weight: bold;       
+    display: inline-block;
+    margin-top: auto; 
+    padding-top: 15px;
+}
+
+/* Adiciona sublinhado ao link quando o mouse estiver sobre ele*/
+.projeto a:hover {
+    text-decoration: underline; 
+}
+
+/* Muda a cor do link após o usuário já ter acessado a página do GitHub*/ 
+.projeto a:visited {
+    color: darkblue;
+}
+
+/* --------------------------------------
+   FORMULÁRIO DE CONTATO
+   --------------------------------------*/
+/* Limita a largura máxima da tabela do formulário para manter a proporção*/
+table {
+    width: 100%;
+    max-width: 600px; 
+}
+
+th {
+    text-align: left;
+    padding-right: 15px;
+    width: 100px;
+}
+
+/* Formatação para os campos de entrada de dados*/
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+}
+
+/* Trava a largura da caixa de mensagem para o usuário não quebrar o layout da tabela*/
+textarea {
+    resize: vertical; 
+}
+
+/* Estilo do botão de envio*/
+.botao {
+    background-color: var(--cor-topo);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.botao:hover {
+    background-color: var(--cor-hover);
+}
+
+/* --------------------------------------
+   RODAPÉ
+   --------------------------------------*/
+/* Posiciona o rodapé na grid-area 'rodape' definida no container body*/
+.rodape {
+    grid-area: rodape;
+    background-color: var(--cor-topo);
+    color: white;
+    text-align: center;
+    padding: 40px;
+    margin-top: 0px;
+}
+
+
+/* --------------------------------------
+   BOTÕES DO MENU E TEMA
+   --------------------------------------*/
+/* Estilo do botão de tema (Desktop)*/
+.btn-tema {
+    background: none;
+    color: white;
+    border: none;
+    padding: 19px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-tema:hover {
+    background-color: var(--cor-hover);
+}
+
+/* Oculta o botão "Menu" do mobile no Desktop*/
+.btn-mobile {
+    display: none; 
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+/* --------------------------------------
+   TEMA ESCURO (DARK MODE)
+   --------------------------------------*/
+/* A classe .dark-mode será ativada no <body> pelo JavaScript, 
+   sobrescrevendo as variáveis originais criadas no :root*/
+body.dark-mode {
+    --cor-fundo: #121212;
+    --cor-texto: #e0e0e0;
+    --cor-borda: #444;
+    --cor-topo: #37a378;
+}
+
+/* Ajustes para os cartões e campos do formulário no modo escuro não ficarem brancos*/
+body.dark-mode .projeto,
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #1e1e1e;
+    color: var(--cor-texto);
+}
+
+
+/* --------------------------------------
+   MEDIA QUERY 
+   --------------------------------------*/
+/* Configuração para dispositivos móveis */
+@media only screen and (max-width: 767px) {
+    
+    /* Transforma o grid de projetos em 1 única coluna no celular*/
+    .lista-projetos {
+        grid-template-columns: 1fr;
+    }
+
+    /* MENU DINÂMICO MOBILE*/
+    .btn-mobile {
+        display: block; 
+    }
+
+    .menu ul {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Quando o JS adicionar a classe 'ativo', a lista volta a aparecer (Flexbox)*/
+    .menu ul.ativo {
+        display: flex; 
+    }
+}
